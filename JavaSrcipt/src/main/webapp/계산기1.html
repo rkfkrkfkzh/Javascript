@@ -1,0 +1,82 @@
+<html>
+<head>
+	<title>°è»ê±â</title>
+<script> 
+num1=0;
+num2=0;
+op=null;
+re=0;
+
+function str(b){
+	if(document.Calc.result.value == "0")
+		document.Calc.result.value="";
+	document.Calc.result.value += b.value;
+}
+
+function add(b){
+	num1=parseInt(document.Calc.result.value);
+	document.Calc.result.value="0";
+	op=b.value;
+}
+function equal(){
+	num2=parseInt(document.Calc.result.value);
+	switch(op){
+		case "+":
+			re=num1+num2;
+			break;
+		case "-":
+			re=num1-num2;
+			break;
+		case "*":
+			re=num1*num2;
+			break;
+		case "/":
+			re=num1/num2;
+			break;
+	}
+	document.Calc.result.value=re;
+}
+
+</script>
+</head>
+<body>
+<form name=Calc>
+<table border="5">
+<tr>
+<td colspan=4> <input type=text name=result size=20 value="0"  style="text-align:right" ></td>
+</tr>
+
+<tr>
+<td ><input type=button name=bt_num1 value="1"onclick = "str(this)"style="height:20; width:30"></td>
+<td ><input type=button name=bt_num2 value="2" onclick = "str(this)"style="height:20; width:30"></td>
+<td ><input type=button name=bt_num3 value="3" onclick = "str(this)"style="height:20; width:30"></td>
+<td ><input type=button name=bt_numa value="+" onclick = "add(this)"style="height:20; width:30"></td>
+</tr>
+
+<tr>
+<td><input type=button name=bt_num4 value="4" onclick = "str(this)"style="height:20; width:30"></td>
+<td><input type=button name=bt_num5 value="5" onclick = "str(this)"style="height:20; width:30"></td>
+<td><input type=button name=bt_num6 value="6" onclick = "str(this)"style="height:20; width:30"></td>
+<td><input type=button name=bt_numb value="-" onclick = "add(this)"style="height:20; width:30"></td>
+</tr>
+
+<tr>
+<td><input type=button name=bt_num7 value="7" onclick = "str(this)"style="height:20; width:30"></td>
+<td><input type=button name=bt_num8 value="8" onclick = "str(this)"style="height:20; width:30"></td>
+<td><input type=button name=bt_num9 value="9" onclick = "str(this)"style="height:20; width:30"></td>
+<td><input type=button name=bt_numc value="*" onclick = "add(this)"style="height:20; width:30"></td>
+</tr>
+
+<tr>
+<td><input type=button name=bt_num0 value="0" onclick = "str(this)"style="height:20; width:30"></td>
+<td><input type=reset value="C"style="height:20; width:30" onclick="document.Calc.result.value='0'"></td>
+<td><input type=button name=bt_numd value="/" onclick = "add(this)"style="height:20; width:30"></td>
+<td><input type=button name=bt_nume value="=" onclick = "equal()"style="height:20; width:30"></td>
+</tr>
+
+
+</table>
+</form>
+</body>
+</html>
+

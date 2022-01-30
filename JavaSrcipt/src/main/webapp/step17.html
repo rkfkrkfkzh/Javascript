@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+
+function createTable(){
+	var table="<table border=1>";
+	table+="<tr><td>1</td><td>아이유</td></tr>";
+	table+="<tr><td>2</td><td>손연재</td></tr>";
+	table+="</table>";
+	document.getElementById("tableView").innerHTML=table;
+}
+
+function clearTable(){
+	document.getElementById("tableView").innerHTML="";
+}
+
+function createTbody(){
+	document.getElementById("tb").innerHTML="<tr><td>아이유</td><td>11</td></tr>";
+}
+
+function clearTbody(){
+	document.getElementById("tb").innerHTML="";
+}
+
+</script>
+
+
+
+</head>
+<body>
+thead, tbody, tfoot 요소
+이 thead, tbody, tfoot 요소는 table에서 행으로 구조적 의미를 가지게 합니다.
+
+colgroup이 열(수직, col)을 그룹화 한다면, 이 세가지 요소들은 행(가로, row)을 그룹화 하는
+ 역할을 합니다.
+
+이 요소들은 table의 자식으로 올 수 있으며, caption과 colgroup 다음으로 올 수 있습니다. 
+또한 각 요소들이 모두 있어야 할 필요는 없습니다.
+
+case 1: <input type="button" value="create" onclick="createTable()">
+        <input type="button" value="clear" onclick="clearTable()">
+        <span id ="tableView"></span>
+<hr>
+
+
+case 2: <br>
+<table border="1">
+<thead>
+<tr>
+<th>이름</th><th>나이</th>  
+</tr>
+
+</thead>
+
+<tbody id="tb">     </tbody>
+
+<tfoot>
+<tr>
+<td><input type="button" value="create" onclick="createTbody()"></td>
+<td><input type="button" value="clear" onclick="clearTbody()"></td>
+
+</tr>
+
+
+</tfoot>
+
+</table>
+
+
+</body>
+</html>

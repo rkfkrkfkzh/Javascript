@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+/*star text에 데이터를 입력한 후에
+ * 삭제버튼을 누르면 confirm()를 이용하여
+ 확인을 누르면 입력한 데이터를 삭제하고,
+ 취소를 누르면그대로 둔다.
+ */
+function deleteStar(){
+	var starTxt=document.f1.star; 
+	 flag=confirm(starTxt.value+"저장하시겠습니까?");
+	 
+	 if(flag==false){
+		 return false; 
+	 }else {
+		 starTxt.value=""; 
+		 statTxt.focus(); 
+		 alert("삭제완료!"); 
+		 
+	 }
+}
+
+function enterSite(){
+	var flag=confirm("사이트로 이동할래?");
+	if(flag){
+		location.href="http://www.daum.net//"
+	}
+}
+
+</script>
+
+
+
+</head>
+<body>
+
+<form name="f1">
+<input type="text" name="star">
+<input type="button" value="삭제" onclick="deleteStar()">
+</form>
+
+<form name="f2">
+<input type="button" value="입장하기" onclick="enterSite()">
+
+
+</form>
+
+</body>
+</html>
